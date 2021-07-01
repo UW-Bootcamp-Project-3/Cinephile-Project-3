@@ -24,6 +24,9 @@ import React from 'react';
           Sign-Up
         
             </li>
+            <li className="nav-item px-2" >
+       Contact Us
+      </li>
     
     </ul>
     <form className="form-inline my-2 my-lg-0">
