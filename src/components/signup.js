@@ -16,9 +16,10 @@ function Signup() {
 
         <div className="content ">
           <div className="form ">
-            <div className="form-group">
+          <div className="form-group">
               <input
                 type="text"
+                id="username-signup"
                 className="form-control"
                 placeholder="Username"
                 style={{ width: "370px", margin: "20px" }}
@@ -26,14 +27,25 @@ function Signup() {
             </div>
             <div className="form-group">
               <input
-                type="password"
+                type="text"
+                id="email-signup"
                 className="form-control"
-                placeholder="password"
+                placeholder="Email"
+                style={{ width: "370px", margin: "20px" }}
+              />
+            </div>
+            <div className="form-group">
+              <input
+                type="password"
+                id="password-signup"
+                className="form-control"
+                placeholder="Password"
                 style={{ width: "370px", margin: "20px" }}
               />
             </div>
             <button
               type="button"
+              id="signup-form"
               className="btn btn-warning"
               style={{ margin: "20px" }}
             >
