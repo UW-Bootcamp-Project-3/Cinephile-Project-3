@@ -2,8 +2,8 @@ const loginFormHandler = async (event) => {
     event.preventDefault();
   
     // Collect values from the login form
-    const email = document.querySelector('.exampleInputEmail1').value.trim();
-    const password = document.querySelector('.exampleInputPassword1').value.trim();
+    const email = document.querySelector('#exampleInputEmail1').value.trim();
+    const password = document.querySelector('#exampleInputPassword1').value.trim();
   
     if (email && password) {
       // Send a POST request to the API endpoint
@@ -14,7 +14,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        // If successful, redirect the browser to the search page
+        // If successful, redirect the browser
         document.location.replace('/');
       } else {
         alert(response.statusText);
@@ -23,5 +23,5 @@ const loginFormHandler = async (event) => {
   };
   
   document
-    .querySelector('.login-form')
+    .querySelector('#login-form')
     .addEventListener('click', loginFormHandler);
