@@ -1,9 +1,8 @@
 // Dependencies
-const path = require('path');
 const express = require('express');
 const session = require('express-session');
-const exphbs = require('express-handlebars');
-const routes = require('./controllers');
+const routes = require('./routes');
+const path = require("path");
 // const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
@@ -28,16 +27,6 @@ const sess = {
 
 app.use(session(sess));
 
-
-// Handlebars setting
-app.set('view engine', 'hbs');
-app.engine('hbs', exphbs({
-    extname:'hbs',
-    defaultLayout: 'index',
-
-}));
-
-
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -48,7 +37,9 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
-
+app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
 
 // Starts the server to begin listening
 sequelize.sync({ force: false }).then(() => {
