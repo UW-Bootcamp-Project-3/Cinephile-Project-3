@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import reactDom from "react-dom";
-import { link } from "react-router-dom";
 class Contact extends Component {
   render() {
     return (
@@ -15,6 +13,7 @@ class Contact extends Component {
             <div className="row">
               <div className="col-md-7">
                 <iframe
+                  title="Google Maps"
                   src="https://www.google.com/maps/d/u/0/embed?mid=1XVPXTlD_Ex3wzHqMQIrbTPItw0k6PGqi"
                   style={{
                     border: "0",
@@ -27,7 +26,7 @@ class Contact extends Component {
               </div>
               <div className="col-md-5">
                 <h4>
-                  <strong>Contact Us</strong>
+                  <strong>Contact us</strong>
                 </h4>
                 <form>
                   <div className="form-group">
@@ -51,16 +50,17 @@ class Contact extends Component {
                       placeholder="Phone"
                     />
                   </div>
-                  <textarea
-                    className="form-control"
-                    cols="30"
-                    rows="3"
-                    placeholder="Message"
-                  ></textarea>
-                  <link className="btn btn-outline-primary text-uppercase">
-                    <i className="fa fa-paper-plane-o" aria-hidden="true" />
-                    <i className="fab fa-telegram-plane" />
-                  </link>
+                  <div>
+                    <textarea
+                      className="form-control"
+                      cols="30"
+                      rows="3"
+                      placeholder="Message"
+                    ></textarea>
+                  </div>
+                  <button type="button" className="btn btn-warning">
+                    Send
+                  </button>
                 </form>
               </div>
             </div>
