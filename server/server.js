@@ -46,6 +46,11 @@ app.use(express.urlencoded ({extended:true}))
 
 app.use(routes);
 
+// app.get("/", (req, res) => {
+//   res.send("Hello World!");
+// });
+  
+
 // Starts the server to begin listening
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {

@@ -8,11 +8,11 @@ let sequelize;
 //   sequelize = new Sequelize(process.env.REACT_APP_JAWSDB_URL);
 // } else {
 sequelize = new Sequelize(
-      process.env.REACT_APP_DB_NAME,
-      process.env.REACT_APP_DB_USER,
-      process.env.REACT_APP_DB_PASSWORD,
+      'pdai0wxfohmy8l28',
+      'mlxno0ooz781y6wr',
+      'amkbhqy5b3ho8ike',
       {
-        host: process.env.REACT_APP_DB_HOST,
+        host: 'pk1l4ihepirw9fob.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
         dialect: 'mysql',
         operatorsAliases: 0,
       }
