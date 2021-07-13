@@ -1,21 +1,22 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
+// require('dotenv').config({ path: '.env.local' });
 
 let sequelize;
 
-if (process.env.JAWSDB_URL) {
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
-} else {
+// if (process.env.REACT_APP_JAWSDB_URL) {
+//   sequelize = new Sequelize(process.env.REACT_APP_JAWSDB_URL);
+// } else {
 sequelize = new Sequelize(
-      process.env.DB_NAME,
-      process.env.DB_USER,
-      process.env.DB_PASSWORD,
+      process.env.REACT_APP_DB_NAME,
+      process.env.REACT_APP_DB_USER,
+      process.env.REACT_APP_DB_PASSWORD,
       {
-        host: process.env.DB_HOST,
+        host: process.env.REACT_APP_DB_HOST,
         dialect: 'mysql',
-        port: 3306,
+        operatorsAliases: 0,
       }
-    );
-}
+);
+
 
   module.exports = sequelize;
