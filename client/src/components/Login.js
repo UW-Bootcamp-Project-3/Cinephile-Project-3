@@ -2,7 +2,6 @@ import React from "react";
 
 function Login() {
 
-
   const loginFormHandler = async (event) => {
     event.preventDefault();
   
@@ -30,10 +29,12 @@ function Login() {
   return (
     <div className="container">
       <form>
+      <div className="header col-md-3 ">
+          <h4>
+            <strong>Login</strong>
+          </h4>
+        </div>
         <div className="form-group">
-          <label htmlFor="exampleInputEmail1">
-            <strong>Email address</strong>
-          </label>
           <input
             type="email"
             className="form-control"
@@ -45,14 +46,10 @@ function Login() {
           <small id="emailHelp" className="form-text text-muted"></small>
         </div>
         <div className="form-group">
-          <label htmlFor="exampleInputPassword1">
-
-            <strong>Password</strong>
-          </label>
           <input
             type="password"
             className="form-control input-sm"
-            id="exampleInputPassword1 input-sm"
+            id="exampleInputPassword1"
             placeholder="Password"
             style={{ width: "370px" }}
           />
