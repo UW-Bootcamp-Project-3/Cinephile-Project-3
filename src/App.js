@@ -9,9 +9,11 @@ import Navigation from "./components/Navigation";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
+import Banner from "../src/images/Banner.gif"
 
 function App() {
   return (
+    <div>
     <Router>
       <div>
         <Navigation />
@@ -20,7 +22,10 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route path="/contact" component={Contact} />
       </div>
+
     </Router>
+  <img src= {Banner} alt="Banner" className="Banner"/>
+  </div>
   );
 }
 
