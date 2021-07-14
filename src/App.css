@@ -1,7 +1,13 @@
-html {
+body {
   background-image: url(./images/film.jpeg);
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  width: auto;
+}
+
+.navbar {
+
+  
 }

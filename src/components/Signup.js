@@ -54,6 +54,7 @@ function Signup() {
                 id="email-signup"
                 className="form-control"
                 placeholder="Email"
+
                 style={{ width: "370px", margin: "20px" }}
               />
             </div>
@@ -63,6 +64,7 @@ function Signup() {
                 id="password-signup"
                 className="form-control"
                 placeholder="Password"
+
                 style={{ width: "370px", margin: "20px" }}
               />
             </div>

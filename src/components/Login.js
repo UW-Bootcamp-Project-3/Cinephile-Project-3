@@ -2,6 +2,7 @@ import React from "react";
 
 function Login() {
 
+
   const loginFormHandler = async (event) => {
     event.preventDefault();
   
@@ -25,6 +26,7 @@ function Login() {
       }
     }
   };
+
   return (
     <div className="container">
       <form>
@@ -44,6 +46,7 @@ function Login() {
         </div>
         <div className="form-group">
           <label htmlFor="exampleInputPassword1">
+
             <strong>Password</strong>
           </label>
           <input
@@ -56,6 +59,7 @@ function Login() {
         </div>
 
         <button onClick={loginFormHandler} id="login-form" type="button" className="btn btn-warning">
+
           Login
         </button>
       </form>
