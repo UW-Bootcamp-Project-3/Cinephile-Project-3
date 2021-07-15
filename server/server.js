@@ -44,9 +44,9 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 
-// app.get("/", (req, res) => {
-//   res.send("Hello World!");
-// });
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
   
 
 // Starts the server to begin listening
