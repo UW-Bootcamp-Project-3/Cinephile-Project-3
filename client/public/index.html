@@ -15,6 +15,7 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./css/loading.css">
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -36,7 +37,12 @@
 
     
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div id="loadingDiv">
+        <img class="loader" id="loading-image" src="./countdown-gif.gif" alt="Loading..." />
+      </div>
+
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -54,5 +60,6 @@
         height: 100px;
       }
     </style>
+    <script src="./js/loading.js"></script>
   </body>
 </html>
