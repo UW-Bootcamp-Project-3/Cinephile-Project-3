@@ -58,6 +58,14 @@ function Navigation() {
           <li className="nav-item dropdown px-2">
             <Link
               style={{ color: "black", textDecoration: "none" }}
+              to="/logout"
+            >
+              Logout
+            </Link>
+          </li>
+          <li className="nav-item dropdown px-2">
+            <Link
+              style={{ color: "black", textDecoration: "none" }}
               to="/contact"
             >
               Contact Us
