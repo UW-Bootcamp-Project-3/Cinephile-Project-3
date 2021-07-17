@@ -28,9 +28,9 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "server": "cd server && node server.js",
+    "server": "node server.js",
     "dev": "run-p server start",
-    "start": "concurrently \"cd client && react-scripts start\" \"cd server && nodemon server\"",
+    "start": "concurrently \"cd client && react-scripts start\" \"nodemon server\"",
     "client": "cd client && npm run start",
     "build": "cd client && npm run build",
     "test": "react-scripts test",
