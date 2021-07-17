@@ -1,12 +1,12 @@
 // Dependencies
 const express = require('express');
 const session = require('express-session');
-const routes = require('./controllers');
+const routes = require('./server/controllers');
 const path = require("path");
 require('dotenv').config();
 // const helpers = require('./utils/helpers');
 
-const sequelize = require('./config/connection');
+const sequelize = require('./server/config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Sets up the Express App
@@ -40,6 +40,11 @@ app.use(express.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 // Add routes, both API and view
 app.use(routes);
 

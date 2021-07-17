@@ -1,20 +1,19 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
-// require('dotenv').config({ path: '.env.local' });
+// require('dotenv').config({ path: '../../.env' });
 
 let sequelize;
 
 
 sequelize = new Sequelize(
-  'pdai0wxfohmy8l28',
-  'mlxno0ooz781y6wr',
-  'amkbhqy5b3ho8ike',
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
   {
-    host: 'pk1l4ihepirw9fob.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    host: process.env.DB_HOST,
     dialect: 'mysql',
     operatorsAliases: 0,
   }
 );
-
 
   module.exports = sequelize;

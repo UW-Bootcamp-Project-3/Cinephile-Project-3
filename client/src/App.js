@@ -15,6 +15,7 @@ import Movie from "../src/components/Movie";
 function App() {
   return (
     <div>
+      <img src={Banner} alt="Banner" className="Banner" />
       <Router>
         <div>
           <Navigation />
@@ -22,10 +23,8 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
           <Route path="/contact" component={Contact} />
-          <Route exact path="/movie" component={Movie} />
         </div>
       </Router>
-      <img src={Banner} alt="Banner" className="Banner" />
     </div>
   );
 }
