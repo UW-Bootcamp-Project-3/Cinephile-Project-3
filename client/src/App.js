@@ -13,7 +13,8 @@ import Banner from "../src/images/Banner.gif"
 
 function App() {
   return (
-    <div>
+    <div>  
+      <img src= {Banner} alt="Banner" className="Banner"/>
     <Router>
       <div>
         <Navigation />
@@ -24,7 +25,7 @@ function App() {
       </div>
 
     </Router>
-  <img src= {Banner} alt="Banner" className="Banner"/>
+
   </div>
   );
 }
