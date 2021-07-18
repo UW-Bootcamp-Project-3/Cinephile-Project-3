@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 
 function Navigation() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light px-2 font-weight-bold ">
-     
+    <nav className="navbar navbar-expand-lg navbar-light bg-warning px-2 font-weight-bold ">
       <button
         className="navbar-toggler px-2"
         type="button"
@@ -17,8 +16,7 @@ function Navigation() {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-   
-      
+
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item dropdown px-2">
@@ -33,11 +31,13 @@ function Navigation() {
               Home
             </Link>
           </li>
-          <li
-            onClick={() => alert("I was pressed")}
-            className="nav-item active px-2"
-          >
-            Movies
+          <li className="nav-item dropdown px-2">
+            <Link
+              style={{ color: "black", textDecoration: "none" }}
+              to="/movie"
+            >
+              Movies
+            </Link>
           </li>
           <li className="nav-item dropdown px-2">
             <Link
@@ -64,7 +64,7 @@ function Navigation() {
             </Link>
           </li>
         </ul>
-        
+
         <form className="form-inline my-2 my-lg-0">
           <input
             className="form-control mr-sm-2"
@@ -80,7 +80,6 @@ function Navigation() {
           </button>
         </form>
       </div>
-     
     </nav>
   );
 }

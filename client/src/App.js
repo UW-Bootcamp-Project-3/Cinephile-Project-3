@@ -9,11 +9,13 @@ import Navigation from "./components/Navigation";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
-import Banner from "../src/images/Banner.gif"
+import Banner from "../src/images/Banner.gif";
+import Movie from "../src/components/Movie";
 
 function App() {
   return (
-    <div>
+    <div>  
+      <img src= {Banner} alt="Banner" className="Banner"/>
     <Router>
       <div>
         <Navigation />
@@ -24,7 +26,7 @@ function App() {
       </div>
 
     </Router>
-  <img src= {Banner} alt="Banner" className="Banner"/>
+
   </div>
   );
 }
