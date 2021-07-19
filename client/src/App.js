@@ -11,6 +11,7 @@ import Signup from "./components/Signup";
 import Home from "./components/Home";
 import Banner from "../src/images/Banner.gif";
 import Movie from "../src/components/Movie";
+import Profile from "../src/components/Profile";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route path="/contact" component={Contact} />
+        <Route exact path="/profile" component={Profile} />
       </div>
 
     </Router>
