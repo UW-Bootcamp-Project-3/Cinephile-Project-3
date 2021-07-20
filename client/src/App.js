@@ -10,26 +10,26 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
 import Banner from "../src/images/Banner.gif";
-import Movie from "../src/components/Movie";
+import Movies from "../src/components/Movies";
 import Profile from "../src/components/Profile";
 
 function App() {
   return (
-    <div>  
-      <img src= {Banner} alt="Banner" className="Banner"/>
-    <Router>
-      <div>
-        <Navigation />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={Signup} />
-        <Route path="/contact" component={Contact} />
-        <Route exact path="/profile" component={Profile} />
-      </div>
+    <div>
+      <img src={Banner} alt="Banner" className="Banner" />
+      <Router>
+        <div>
+          <Navigation />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/movies" component={Movies} />
 
-    </Router>
-
-  </div>
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route path="/contact" component={Contact} />
+          <Route exact path="/profile" component={Profile} />
+        </div>
+      </Router>
+    </div>
   );
 }
 
