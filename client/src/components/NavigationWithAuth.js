@@ -2,7 +2,20 @@ import { Alert } from "bootstrap";
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navigation() {
+function NavigationWithAuth() {
+  const logout = async () => {
+    const response = await fetch('/api/users/logout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
+  
+    if (response.ok) {
+      document.location.replace('/search');
+    } else {
+      alert(response.statusText);
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-warning px-2 font-weight-bold ">
       <button
@@ -50,7 +63,7 @@ function Navigation() {
           <li className="nav-item dropdown px-2">
             <Link
               style={{ color: "black", textDecoration: "none" }}
-              to="/logout"
+              onClick={logout}
             >
               Logout
             </Link>
@@ -83,4 +96,4 @@ function Navigation() {
     </nav>
   );
 }
-export default Navigation;
+export default NavigationWithAuth;

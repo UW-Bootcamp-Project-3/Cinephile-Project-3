@@ -14,25 +14,17 @@ import Banner from "../src/images/Banner.gif";
 import Movies from "../src/components/Movies";
 import Profile from "../src/components/Profile";
 import ParticleBackground from "./components/ParticleBackground";
+import Authorization from "./components/Authorization";
 
-function AuthBtn(props) {
-  const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
-    return <NavigationWithAuth />;
-  }
-  return <Navigation />;
-};
 
 
 function App() {
-  const {isLoggedIn} = this.state;
   return (
-    
     <div>  
       <img src= {Banner} alt="Banner" className="Banner"/>
     <Router>
       <div>
-        <AuthBtn isLoggedIn={isLoggedIn} />
+        <Authorization />
         <Route exact path="/" component={Home} />
         <Route exact path="/movies" component={Movies} />
         <Route exact path="/login" component={Login} />
