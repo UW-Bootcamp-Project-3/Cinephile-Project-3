@@ -12,21 +12,26 @@ import Home from "./components/Home";
 import Banner from "../src/images/Banner.gif";
 import Movies from "../src/components/Movies";
 import Profile from "../src/components/Profile";
+import ParticleBackground from "./components/ParticleBackground";
+
 
 function App() {
   return (
-    <div>
-      <img src={Banner} alt="Banner" className="Banner" />
-      <Router>
-        <div>
-          <Navigation />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/movies" component={Movies} />
 
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <Route path="/contact" component={Contact} />
-          <Route exact path="/profile" component={Profile} />
+    
+    <div>  
+      <img src= {Banner} alt="Banner" className="Banner"/>
+    <Router>
+      <div>
+        <Navigation />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/movies" component={Movies} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+        <Route path="/contact" component={Contact} />
+        <Route exact path="/profile" component={Profile} />
+        <ParticleBackground />
+
         </div>
       </Router>
     </div>
