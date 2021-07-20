@@ -12,9 +12,12 @@ import Home from "./components/Home";
 import Banner from "../src/images/Banner.gif";
 import Movie from "../src/components/Movie";
 import Profile from "../src/components/Profile";
+import ParticleBackground from "./components/ParticleBackground";
+
 
 function App() {
   return (
+    
     <div>  
       <img src= {Banner} alt="Banner" className="Banner"/>
     <Router>
@@ -25,6 +28,7 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route path="/contact" component={Contact} />
         <Route exact path="/profile" component={Profile} />
+        <ParticleBackground />
       </div>
 
     </Router>
