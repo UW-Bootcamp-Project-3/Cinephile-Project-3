@@ -44,7 +44,7 @@ export default function TransitionsModal({ children, media_type, id }) {
 
   const fetchData = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+      `https://api.themoviedb.org/3/${media_type}/${id}?api_key=b4e79e1b91530049189e90e03066833f&language=en-US`
     );
 
     setContent(data);
@@ -53,7 +53,7 @@ export default function TransitionsModal({ children, media_type, id }) {
 
   const fetchVideo = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+      `https://api.themoviedb.org/3/${media_type}/${id}/videos?api_key=b4e79e1b91530049189e90e03066833f&language=en-US`
     );
 
     setVideo(data.results[0]?.key);
