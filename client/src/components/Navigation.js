@@ -34,7 +34,7 @@ function Navigation() {
           <li className="nav-item dropdown px-2">
             <Link
               style={{ color: "black", textDecoration: "none" }}
-              to="/movie"
+              to="/movies"
             >
               Movies
             </Link>
