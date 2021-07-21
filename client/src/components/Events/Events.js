@@ -12,7 +12,10 @@ function Events(){
       <p className="card-text">1501 7th Ave., Seattle, WA, 98101</p>
       <p className="card-text">Saturday, July 24 4:15pm</p>
     </div>
+    <div className="count">
     <img alt="icon" src="/images/people-fill.svg" className="bi bi-people-fill"></img>
+    <p className="card-text">0</p>
+    </div>
     <button className="btn btn-warning">RSVP</button>
     <div className="card-footer">
       <small className="text-muted">Rated R</small>
@@ -26,7 +29,10 @@ function Events(){
       <p className="card-text">600 Pine St #400, Seattle, WA 98101</p>
       <p className="card-text">Friday, July 26th 9:30pm</p>
     </div>
+    <div className="count">
     <img alt="icon" src="/images/people-fill.svg" className="bi bi-people-fill"></img>
+    <p className="card-text">0</p>
+    </div>
     <button className="btn btn-warning">RSVP</button>
     <div className="card-footer">
       <small className="text-muted">Rated PG-13</small>
@@ -40,7 +46,10 @@ function Events(){
       <p className="card-text">4500 9th Ave NE, Seattle, WA 98105</p>
       <p className="card-text">Saturday, July 30th 7:00pm</p>
     </div>
+    <div className="count">
     <img alt="icon" src="/images/people-fill.svg" className="bi bi-people-fill"></img>
+    <p className="card-text">0</p>
+    </div>
     <button className="btn btn-warning">RSVP</button>
     <div className="card-footer">
       <small className="text-muted">Rated R</small>
