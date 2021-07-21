@@ -1,0 +1,10 @@
+.card-deck{
+margin: 50px;
+}
+.count{
+    display: flex;
+}
+
+.bi-people-fill{
+    margin-left: 85%;
+}
