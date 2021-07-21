@@ -3,7 +3,7 @@ import { useAppContext } from "../libs/contextLib";
 
 function Login() {
   const { userHasAuthenticated } = useAppContext();
-  
+
   const loginFormHandler = async (event) => {
     event.preventDefault();
   

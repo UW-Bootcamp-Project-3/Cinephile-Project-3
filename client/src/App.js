@@ -14,6 +14,7 @@ import Profile from "../src/components/Profile";
 import ParticleBackground from "./components/ParticleBackground";
 import Navigation from "./components/Navigation";
 import NavigationWithAuth from "./components/NavigationWithAuth";
+import Events from "./components/Events/Events";
 import { AppContext } from "./libs/contextLib";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route path="/contact" component={Contact} />
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/events" component={Events} />
         <ParticleBackground />
 
         </div>

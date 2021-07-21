@@ -1,4 +1,3 @@
-import { Alert } from "bootstrap";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../libs/contextLib";
@@ -53,6 +52,22 @@ function NavigationWithAuth() {
               to="/movies"
             >
               Movies
+            </Link>
+          </li>
+          <li className="nav-item dropdown px-2">
+            <Link
+              style={{ color: "black", textDecoration: "none" }}
+              to="/events"
+            >
+              Events
+            </Link>
+          </li>
+          <li className="nav-item dropdown px-2">
+            <Link
+              style={{ color: "black", textDecoration: "none" }}
+              to="/chat"
+            >
+              Chat
             </Link>
           </li>
           <li className="nav-item dropdown px-2">
