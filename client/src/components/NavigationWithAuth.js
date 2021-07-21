@@ -2,10 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 
-function Navigation() {
+function NavigationWithAuth() {
+  const logout = async () => {
+    const response = await fetch('/api/users/logout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    });
+  
+    if (response.ok) {  
+      document.location.replace('/login');
+      sessionStorage.removeItem("loggedIn");
+    } else {
+      alert(response.statusText);
+    }
+  };
 
   // let loggedIn = sessionStorage.getItem("loggedIn");
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-warning px-2 font-weight-bold ">
       <button
@@ -37,17 +49,41 @@ function Navigation() {
           <li className="nav-item dropdown px-2">
             <Link
               style={{ color: "black", textDecoration: "none" }}
-              to="/signup"
+              to="/movies"
             >
-              Sign-Up
+              Movies
             </Link>
           </li>
           <li className="nav-item dropdown px-2">
             <Link
               style={{ color: "black", textDecoration: "none" }}
-              to="/login"
+              to="/events"
             >
-              Login
+              Events
+            </Link>
+          </li>
+          <li className="nav-item dropdown px-2">
+            <Link
+              style={{ color: "black", textDecoration: "none" }}
+              to="/chat"
+            >
+              Chat
+            </Link>
+          </li>
+          <li className="nav-item dropdown px-2">
+            <Link
+              style={{ color: "black", textDecoration: "none" }}
+              to="/Profile"
+            >
+              Profile
+            </Link>
+          </li>
+          <li className="nav-item dropdown px-2">
+            <Link
+              style={{ color: "black", textDecoration: "none" }}
+              onClick={logout}
+            >
+              Logout
             </Link>
           </li>
           <li className="nav-item dropdown px-2">
@@ -59,8 +95,23 @@ function Navigation() {
             </Link>
           </li>
         </ul>
+
+        <form className="form-inline my-2 my-lg-0">
+          <input
+            className="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button
+            className="btn btn-outline-success my-2 my-sm-0 float-right"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
       </div>
     </nav>
-  )
-  };
-export default Navigation;
+  )};
+
+export default NavigationWithAuth;
