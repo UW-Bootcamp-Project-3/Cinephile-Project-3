@@ -1,8 +1,7 @@
-import React from "react";
-import { useAppContext } from "../libs/contextLib";
+import React, { useState } from "react";
+// import { useAppContext } from "../libs/contextLib";
 
 function Login() {
-  const { userHasAuthenticated } = useAppContext();
 
   const loginFormHandler = async (event) => {
     event.preventDefault();
@@ -22,7 +21,8 @@ function Login() {
       if (response.ok) {
         // If successful, redirect the browser
         document.location.replace('/');
-        userHasAuthenticated(true);
+        // userHasAuthenticated(true);
+        sessionStorage.setItem("loggedIn",true);
       } else {
         alert(response.statusText);
       }

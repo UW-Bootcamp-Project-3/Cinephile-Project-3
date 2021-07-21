@@ -13,23 +13,16 @@ import Movies from "../src/components/Movies";
 import Profile from "../src/components/Profile";
 import ParticleBackground from "./components/ParticleBackground";
 import Navigation from "./components/Navigation";
-import NavigationWithAuth from "./components/NavigationWithAuth";
 import Events from "./components/Events/Events";
-import { AppContext } from "./libs/contextLib";
+// import { AppContext } from "./libs/contextLib";
 
 function App() {
-  const [isAuthenticated, userHasAuthenticated] = useState(false);
   return (
     <div>  
       <img src= {Banner} alt="Banner" className="Banner"/>
-    <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
     <Router>
       <div>
-      {isAuthenticated ? (
-        <NavigationWithAuth />
-        ) : (
         <Navigation />
-        )}
         <Route exact path="/" component={Home} />
         <Route exact path="/movies" component={Movies} />
         <Route exact path="/login" component={Login} />
@@ -38,10 +31,8 @@ function App() {
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/events" component={Events} />
         <ParticleBackground />
-
         </div>
       </Router>
-      </AppContext.Provider>
     </div>
   );
 }
