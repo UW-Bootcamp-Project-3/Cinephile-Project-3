@@ -1,3 +1,4 @@
+
 import React, { useRef, useState } from "react";
 import "./App.css";
 import firebase from "firebase/app";
@@ -11,7 +12,6 @@ import { useCollectionData } from "react-firebase-hooks/firestore";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./components/contact/Contact";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Navigation from "./components/Navigation";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
@@ -19,6 +19,11 @@ import Banner from "../src/images/Banner.gif";
 import Movies from "../src/components/Movies";
 import Profile from "../src/components/Profile";
 import ParticleBackground from "./components/ParticleBackground";
+import Navigation from "./components/Navigation";
+import NavigationWithAuth from "./components/NavigationWithAuth";
+import Events from "./components/Events/Events";
+// import { AppContext } from "./libs/contextLib";
+
 firebase.initializeApp({
   // config
   apiKey: "AIzaSyBnyW9BhLpp1SWPvmrg63a-aHdbCSBJ3O4",
@@ -34,22 +39,25 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
+
 function App() {
   const [user] = useAuthState(auth);
-
+  const loggedIn = sessionStorage.getItem("loggedIn");
+  if(loggedIn){
   return (
-    <div>
-      <img src={Banner} alt="Banner" className="Banner" />
-      <Router>
-        <div>
-          <Navigation />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/movies" component={Movies} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <Route path="/contact" component={Contact} />
-          <Route exact path="/profile" component={Profile} />
-          <ParticleBackground />
+    <div>  
+      <img src= {Banner} alt="Banner" className="Banner"/>
+    <Router>
+      <div>
+        <NavigationWithAuth />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/movies" component={Movies} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+        <Route path="/contact" component={Contact} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/events" component={Events} />
+        <ParticleBackground />
         </div>
       </Router>
       <div className="App">
@@ -61,8 +69,25 @@ function App() {
         <section>{user ? <ChatRoom /> : <SignIn />}</section>
       </div>
     </div>
-  );
-}
+  )} return(
+    <div>  
+    <img src= {Banner} alt="Banner" className="Banner"/>
+  <Router>
+    <div>
+      <Navigation />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/movies" component={Movies} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/signup" component={Signup} />
+      <Route path="/contact" component={Contact} />
+      <Route exact path="/profile" component={Profile} />
+      <Route exact path="/events" component={Events} />
+      <ParticleBackground />
+      </div>
+    </Router>
+  </div>
+  )
+};
 
 function SignIn() {
   const signInWithGoogle = () => {

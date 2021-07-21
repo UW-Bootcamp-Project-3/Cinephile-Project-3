@@ -1,4 +1,5 @@
 import React from "react";
+// import { useAppContext } from "../libs/contextLib";
 
 function Signup() {
 
@@ -18,6 +19,7 @@ function Signup() {
   
       if (response.ok) {
         document.location.replace('/');
+        sessionStorage.setItem("loggedIn",true);
       } else {
         alert(response.statusText);
       }

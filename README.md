@@ -29,7 +29,6 @@ Log-in Page:
 ## Contributors
 - Abbey Schueller - https://github.com/abbeyschu
 - Raya Alsaedi - https://github.com/rayaalsaedi
-- Matt Dragin - https://github.com/Mdragin
 - Perlum Toombs - https://github.com/ClarkT06
 
 ## License

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+// import { useAppContext } from "../libs/contextLib";
 
 function Login() {
 
@@ -20,6 +21,8 @@ function Login() {
       if (response.ok) {
         // If successful, redirect the browser
         document.location.replace('/');
+        // userHasAuthenticated(true);
+        sessionStorage.setItem("loggedIn",true);
       } else {
         alert(response.statusText);
       }
