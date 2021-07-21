@@ -2,6 +2,39 @@ import React from "react";
 import "./Events.css";
  
 function Events(){
+  function attending1(){
+    document.querySelector("#rsvp1").style.display = "none";
+    document.querySelector("#remove1").style.display = "block";
+    document.querySelector("#chat1").style.display = "block";
+  };
+  function attending2(){
+    document.querySelector("#rsvp2").style.display = "none";
+    document.querySelector("#remove2").style.display = "block";
+    document.querySelector("#chat2").style.display = "block";
+  };
+  function attending3(){
+    document.querySelector("#rsvp3").style.display = "none";
+    document.querySelector("#remove3").style.display = "block";
+    document.querySelector("#chat3").style.display = "block";
+  };
+  function decline1(){
+    document.querySelector("#rsvp1").style.display = "block";
+    document.querySelector("#remove1").style.display = "none";
+    document.querySelector("#chat1").style.display = "none";
+  };
+  function decline2(){
+    document.querySelector("#rsvp2").style.display = "block";
+    document.querySelector("#remove2").style.display = "none";
+    document.querySelector("#chat2").style.display = "none";
+  };
+  function decline3(){
+    document.querySelector("#rsvp3").style.display = "block";
+    document.querySelector("#remove3").style.display = "none";
+    document.querySelector("#chat3").style.display = "none";
+  };
+
+
+
     return(
 <div className="card-deck">
 <div className="card">
@@ -16,7 +49,9 @@ function Events(){
     <img alt="icon" src="/images/people-fill.svg" className="bi bi-people-fill"></img>
     <p className="card-text">0</p>
     </div>
-    <button className="btn btn-warning">RSVP</button>
+    <button id="rsvp1" onClick={attending1} className="btn btn-secondary">RSVP!</button>
+    <button id="remove1" onClick={decline1} className="btn btn-outline-dark" style={{display: 'none'}}>I can no longer attend</button>
+    <button id="chat1" className="btn btn-warning" style={{display: 'none'}}>Chat with other attendees</button>
     <div className="card-footer">
       <small className="text-muted">Rated R</small>
     </div>
@@ -33,7 +68,9 @@ function Events(){
     <img alt="icon" src="/images/people-fill.svg" className="bi bi-people-fill"></img>
     <p className="card-text">0</p>
     </div>
-    <button className="btn btn-warning">RSVP</button>
+    <button onClick={attending2} id="rsvp2" className="btn btn-secondary">RSVP!</button>
+    <button onClick={decline2} id="remove2" className="btn btn-outline-dark" style={{display: 'none'}}>I can no longer attend</button>
+    <button id="chat2" className="btn btn-warning"style={{display: 'none'}}>Chat with other attendees</button>
     <div className="card-footer">
       <small className="text-muted">Rated PG-13</small>
     </div>
@@ -50,7 +87,9 @@ function Events(){
     <img alt="icon" src="/images/people-fill.svg" className="bi bi-people-fill"></img>
     <p className="card-text">0</p>
     </div>
-    <button className="btn btn-warning">RSVP</button>
+    <button onClick={attending3} id="rsvp3" className="btn btn-secondary">RSVP!</button>
+    <button onClick={decline2} id="remove3" className="btn btn-outline-dark" style={{display: 'none'}}>I can no longer attend</button>
+    <button id="chat3" className="btn btn-warning" style={{display: 'none'}}>Chat with other attendees</button>
     <div className="card-footer">
       <small className="text-muted">Rated R</small>
     </div>
