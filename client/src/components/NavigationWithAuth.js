@@ -1,8 +1,10 @@
 import { Alert } from "bootstrap";
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../libs/contextLib";
 
 function NavigationWithAuth() {
+  const { userHasAuthenticated } = useAppContext();
   const logout = async () => {
     const response = await fetch('/api/users/logout', {
       method: 'POST',
@@ -10,7 +12,8 @@ function NavigationWithAuth() {
     });
   
     if (response.ok) {
-      document.location.replace('/search');
+      document.location.replace('/login');
+      userHasAuthenticated(false);
     } else {
       alert(response.statusText);
     }

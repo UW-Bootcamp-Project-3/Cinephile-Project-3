@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 // import "bootstrap";
 // import "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./components/contact/Contact";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Navigation from "./components/Navigation";
-import NavigationWithAuth from "./components/NavigationWithAuth";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Home from "./components/Home";
@@ -14,17 +12,23 @@ import Banner from "../src/images/Banner.gif";
 import Movies from "../src/components/Movies";
 import Profile from "../src/components/Profile";
 import ParticleBackground from "./components/ParticleBackground";
-import Authorization from "./components/Authorization";
-
-
+import Navigation from "./components/Navigation";
+import NavigationWithAuth from "./components/NavigationWithAuth";
+import { AppContext } from "./libs/contextLib";
 
 function App() {
+  const [isAuthenticated, userHasAuthenticated] = useState(false);
   return (
     <div>  
       <img src= {Banner} alt="Banner" className="Banner"/>
+    <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
     <Router>
       <div>
-        <Authorization />
+      {isAuthenticated ? (
+        <NavigationWithAuth />
+        ) : (
+        <Navigation />
+        )}
         <Route exact path="/" component={Home} />
         <Route exact path="/movies" component={Movies} />
         <Route exact path="/login" component={Login} />
@@ -35,6 +39,7 @@ function App() {
 
         </div>
       </Router>
+      </AppContext.Provider>
     </div>
   );
 }

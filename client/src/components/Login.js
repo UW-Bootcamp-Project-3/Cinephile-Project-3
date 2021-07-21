@@ -1,7 +1,9 @@
 import React from "react";
+import { useAppContext } from "../libs/contextLib";
 
 function Login() {
-
+  const { userHasAuthenticated } = useAppContext();
+  
   const loginFormHandler = async (event) => {
     event.preventDefault();
   
@@ -20,6 +22,7 @@ function Login() {
       if (response.ok) {
         // If successful, redirect the browser
         document.location.replace('/');
+        userHasAuthenticated(true);
       } else {
         alert(response.statusText);
       }

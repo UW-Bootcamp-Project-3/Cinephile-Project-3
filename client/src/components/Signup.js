@@ -1,6 +1,8 @@
 import React from "react";
+import { useAppContext } from "../libs/contextLib";
 
 function Signup() {
+  const { userHasAuthenticated } = useAppContext();
 
   const signupFormHandler = async (event) => {
     event.preventDefault();
@@ -18,6 +20,7 @@ function Signup() {
   
       if (response.ok) {
         document.location.replace('/');
+        userHasAuthenticated(true);
       } else {
         alert(response.statusText);
       }
